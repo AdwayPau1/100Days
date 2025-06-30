@@ -31,7 +31,7 @@ Generates and runs a Yosys script to perform RTL synthesis on `module.sv`.
 
 - The script includes:
   - Reading the Verilog file
-  - Synthesizing with `-top ripple_carry`
+  - Synthesizing with `-top module`
   - Using a custom Liberty file for mapping
   - Running `show` to visualize the synthesized design
 
@@ -46,7 +46,7 @@ make rtl
 
 ### 🧼 `make clean`
 Cleans up generated files:
-- `vvpripple_carry`
+- `vvpmodule`
 - `waveform.vcd`
 - `ripple_carry.sh`
 
@@ -71,8 +71,8 @@ Make sure these tools are installed and available in your system `PATH`.
 ```
 .
 ├── Makefile
-├── ripple_carry.sv       # RTL module
-├── ripple_carry_tb.sv    # Testbench
+├── module.sv       # RTL module
+├── module_tb.sv    # Testbench
 └── waveform.vcd          # (Generated) Simulation output
 ```
 
