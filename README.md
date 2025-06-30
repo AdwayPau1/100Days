@@ -78,11 +78,6 @@ Make sure these tools are installed and available in your system `PATH`.
 
 ---
 
-## 📜 License
-
-Add license information here if applicable.
-
----
 
 ## 🙋‍♂️ Author
 
