@@ -1,15 +1,15 @@
-MODULE=crc32_serial_checker
+MODULE=alu
 
 .PHONY:sim
-sim: crc32_serial_checker_tb.vcd
+sim: alu_tb.vcd
 
 .PHONY:waves
-waves: crc32_serial_checker_tb.vcd
+waves: alu_tb.vcd
 	@echo
 	@echo "### WAVES ###"
-	gtkwave crc32_serial_checker_tb.vcd
+	gtkwave alu_tb.vcd
 
-crc32_serial_checker_tb.vcd: vvp$(MODULE)
+alu_tb.vcd: vvp$(MODULE)
 	@echo
 	@echo "### BUILDING SIM ###"
 	vvp vvp$(MODULE)
@@ -38,5 +38,7 @@ $(MODULE).sh:
 .PHONY: clean
 clean:
 	rm -rf vvp$(MODULE)
-	rm -rf crc32_serial_checker_tb.vcd
+	rm -rf alu_tb.vcd
 	rm -rf $(MODULE).sh
+
+

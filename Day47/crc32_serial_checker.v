@@ -51,4 +51,3 @@ module crc32_serial_checker (
     assign crc_match = check_enable && (crc_reg ~^ received_crc);
 
 endmodule
-

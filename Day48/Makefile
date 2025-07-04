@@ -1,23 +1,23 @@
-MODULE=crc32_serial_checker
+MODULE=booth_multiplier
 
 .PHONY:sim
-sim: crc32_serial_checker_tb.vcd
+sim: booth_multiplier_tb.vcd
 
 .PHONY:waves
-waves: crc32_serial_checker_tb.vcd
+waves: booth_multiplier_tb.vcd
 	@echo
 	@echo "### WAVES ###"
-	gtkwave crc32_serial_checker_tb.vcd
+	gtkwave booth_multiplier_tb.vcd
 
-crc32_serial_checker_tb.vcd: vvp$(MODULE)
+booth_multiplier_tb.vcd: vvp$(MODULE)
 	@echo
 	@echo "### BUILDING SIM ###"
 	vvp vvp$(MODULE)
 
-vvp$(MODULE): $(MODULE).v $(MODULE)_tb.v
+vvp$(MODULE): $(MODULE).sv $(MODULE)_tb.sv
 	@echo
 	@echo "### COMPILING ###"
-	iverilog -g2012 -Wall -o vvp$(MODULE) $(MODULE).v $(MODULE)_tb.v
+	iverilog -g2012 -Wall -o vvp$(MODULE) $(MODULE).sv $(MODULE)_tb.sv
 
 .PHONY: rtl
 rtl: $(MODULE).sh
@@ -27,7 +27,7 @@ rtl: $(MODULE).sh
 $(MODULE).sh: 
 	echo "#!/bin/bash" > $(MODULE).sh
 	echo "yosys -p \"" >> $(MODULE).sh
-	echo "read_verilog $(MODULE).v" >> $(MODULE).sh
+	echo "read_verilog -sv $(MODULE).sv" >> $(MODULE).sh
 	echo "synth -top $(MODULE)" >> $(MODULE).sh
 	echo "abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib" >> $(MODULE).sh
 	echo "show $(MODULE)" >> $(MODULE).sh
@@ -38,5 +38,7 @@ $(MODULE).sh:
 .PHONY: clean
 clean:
 	rm -rf vvp$(MODULE)
-	rm -rf crc32_serial_checker_tb.vcd
+	rm -rf booth_multiplier_tb.vcd
 	rm -rf $(MODULE).sh
+
+

@@ -77,4 +77,3 @@ module crc32_serial_checker_tb;
         $finish;
     end
 endmodule
-
