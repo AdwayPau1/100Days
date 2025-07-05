@@ -58,7 +58,7 @@ make clean
 
 ## 📦 Dependencies
 
-- [Icarus Verilog](http://iverilog.icarus.com/)
+- [Icarus Verilog](https://github.com/steveicarus/iverilog)
 - [GTKWave](http://gtkwave.sourceforge.net/)
 - [Yosys](https://yosyshq.net/yosys/)
 
@@ -71,9 +71,11 @@ Make sure these tools are installed and available in your system `PATH`.
 ```
 .
 ├── Makefile
-├── module.sv       # RTL module
-├── module_tb.sv    # Testbench
-└── waveform.vcd          # (Generated) Simulation output
+├── module.sv             # RTL module
+├── module_tb.sv          # Testbench
+├── waveform.vcd          # (Generated) Waveform output
+├── vvpmodule             # (Generated) Simulation output
+└── module.sh             # (Generated) YOSYS Synthesis Script
 ```
 
 ---
