@@ -48,7 +48,7 @@ make rtl
 Cleans up generated files:
 - `vvpmodule`
 - `waveform.vcd`
-- `ripple_carry.sh`
+- `module.sh`
 
 ```bash
 make clean
